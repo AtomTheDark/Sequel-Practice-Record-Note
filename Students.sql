@@ -1,7 +1,7 @@
 CREATE DATABASE stu_data;
 USE stu_data;
 CREATE TABLE students(
-Rollno INT PRIMARY KEY,
+Roll_no INT PRIMARY KEY,
 Stu_Name VARCHAR(50) UNIQUE,
 Gender VARCHAR(1),
 Age INT,
@@ -9,7 +9,7 @@ Dept VARCHAR(50) NULL,
 DOB DATE,
 Fees INT
 );
-INSERT INTO students(Rollno,Stu_Name,Gender,Age,Dept,DOB,Fees)
+INSERT INTO students(Roll_no,Stu_Name,Gender,Age,Dept,DOB,Fees)
 VALUES
 (1,"Arun","M",24,"Computer",'1997-01-10',120),
 (2,"Ankit","M",21,"History",'1998-03-24',200),
@@ -29,17 +29,18 @@ SELECT Stu_Name FROM students WHERE students.Gender = "F" AND students.Dept= "Hi
 -- List the names of the students whose name have second alphabet as 'n' 
 SELECT Stu_Name FROM students WHERE Stu_Name LIKE "_N%";
 
--- Delete the details of rollno 8 
-DELETE FROM students WHERE Rollno = 8;
+-- Delete the details of Roll_no 8
+DELETE FROM students WHERE Roll_no = 8;
 
--- Change the fee to 170 of student whose rollno is 1 if the existing fee is less than 130
-UPDATE students SET Fees = 170 WHERE Rollno = 1 AND Fees < 130;
+-- Change the fee to 170 of student whose roll_no is 1 if the existing fee is less than 130
+UPDATE students SET Fees = 170 WHERE Roll_no = 1 AND Fees < 130;
 
 -- Add a new column Area of datatype varchar of size 20
 ALTER TABLE students ADD Area VARCHAR(20);
 
--- Add the value "TRY" in the Area attribute whose department is Hindi or Computer| In the paranthesis i have added a dummy condition to satisfy safe update mode without referencing a key
-UPDATE students SET Area = "TRY" WHERE Dept IN("Hindi","Computer") AND Rollno>0;
+-- Add the value "TRY" in the Area attribute whose department is Hindi or Computer| In the parenthesis I
+-- have added a dummy condition to satisfy safe update mode without referencing a key
+UPDATE students SET Area = "TRY" WHERE Dept IN("Hindi","Computer") AND Roll_no > 0;
 
 -- Display the details of students whose Area is null
 SELECT * FROM students WHERE Area IS NULL;
