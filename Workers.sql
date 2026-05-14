@@ -1,4 +1,4 @@
-CREATE DATABASE worker_data;
+CREATE DATABASE IF NOT EXISTS worker_data;
 USE worker_data;
 CREATE TABLE Salesperson(
 Id_code INT PRIMARY KEY NOT NULL,
