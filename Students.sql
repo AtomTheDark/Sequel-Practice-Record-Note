@@ -1,4 +1,4 @@
-CREATE DATABASE stu_data;
+CREATE DATABASE IF NOT EXISTS stu_data;
 USE stu_data;
 CREATE TABLE students(
 Roll_no INT PRIMARY KEY,
